@@ -1,0 +1,320 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;500&display=swap');
+
+/*Pseudoclase root*/
+:root {
+    --background-color: #F4F58E;
+    --color-primario:   #46beaa;
+    --colortext:        rgb(207, 55, 28);
+    --colorvm: #0e6d74;
+    --footer: #af7f16;
+}
+
+html{
+    font-size:      62.5%;
+    font-family:    'Roboto', sans-serif;
+}
+
+* {
+    margin:     0;
+    padding:    0;
+}
+
+.container {
+    max-width:  120rem;
+    margin:     0 auto;
+}
+
+.encabezado-1 {
+    text-align:     center;
+    font-weight:    500;
+    font-size:      3rem;
+}
+
+.contenedor1 {
+    max-width:  120rem;
+    margin:     0 auto;
+}
+
+/*Modificanco los elementos del header (H1 y a)*/
+.contenedor-logo {
+    display:        flex;
+    align-items:    center;
+    gap:            2.5rem;     /*Espacio entre filas y columnas*/
+}
+
+.contenedor-logo img {
+    width: 15rem;
+
+}
+
+.contenedor-logo h1 {
+    color:          aqua;
+    font-size:      3rem;
+    text-transform: uppercase; /*Cambiar todo el extto a mayúsculas*/
+    letter-spacing: 5px;
+}
+
+
+/*Modificaciones del nav*/
+.contenedor-menu {
+    background-color: var(--background-color);
+}
+
+.navbar {
+    display:         flex;
+    justify-content: space-between;
+    align-items:     center;
+    padding:         1rem 0;
+}
+
+.menu {
+    display: flex;
+    gap:     2rem;    /*El espacio aplicado entre filas y columnas*/
+}
+
+.menu li {
+    list-style: none; /*Quitamos las características que vienen por default*/
+}
+
+.menu a {
+    text-decoration: none;             /*Que no se aplique las caracterísricas por default*/
+    font-size:       1.3rem;
+    font-weight:     600;              /*Aplicando negritas*/
+    text-transform:  uppercase;
+    position:        relative;
+    color:           var(--colortext); /*ocupar mi valor guardado en root, propiedad: var (Nombre)*/
+}
+
+
+
+/*Ejemplo de uso de after*/
+.tres::after {
+    content:    "Hola!";
+    color:     palevioletred;
+}
+
+.menu a::after{
+    width:              1.5rem;
+    height:             1px;
+    background-color: #fff;
+    position:           absolute;
+    bottom:             -3px;
+    left:               50%;
+    transform: translate(-50%,50%);
+    opacity:            0;
+}
+
+.menu a:hover::after {
+    opacity: 1;
+}
+
+.menu a:hover { /*Resalta el color del texto al color que indicamos cuando pasamos el mouse por encima*/
+    color: rgb(23, 90, 90);
+}
+
+/*Modificaciones de la sección 1 BANNER*/
+
+.banner {
+    background-image:url("../img/imgbanner.jpg"); /*Imagen de fondo*/
+    height:              80rem;                   /*Ajusta el alto de la imagen de fondo*/
+    background-size:     cover;                   /*Ajusta el tamaño de la imagen de fondo*/
+    background-position: center;                  /*Posición de la imagen*/
+}
+
+.contenido-banner {
+    max-width:      90rem;       /*Ancho máximo del texto dentro del banner*/
+    margin:         0 auto;
+    padding:        25 rem 0;
+}
+
+.contenido-banner h2 {
+    color:          #fff;
+    font-size:      5.5rem;
+    font-weight:    500;
+    line-height:    1.2;
+    text-align:     center;
+
+}
+
+/*Categorias*/
+.top-categories {
+    display:        flex;
+    flex-direction: column; /*La dirección será em columnas*/
+    gap:            2rem;   /*Espacio entre filas y columnas*/
+    margin-bottom:  3rem;   /*Aplicando un margen debajo del elemento*/
+}
+
+.container-categories{
+    display:               grid;          /*Rejillas(cuadriculado)*/
+    grid-template-columns: repeat(3,1fr); /*fr fracción o proporción, bajo columnas*/
+    gap:                   3rem;
+}
+
+.card-category{
+    height:         20rem;
+    display:        flex;
+    flex-direction: column;
+    justify-content:center;
+    align-items: center;
+    border-radius:  2rem;   /*Recorta el border de un elemento*/
+    gap:            2rem;   /*Espacio entre columnas*/
+}
+
+.category-prenda1 {
+    background-image:    url("../img/prenda1.jpg");
+    background-size:     cover;
+    background-position: top; /*Posicionar la imaen en de dondo con la dirección de abajo*/
+    background-repeat:   no-repeat; /*Si la imagen es muy grande, que no se repita*/
+}
+
+.category-prenda2 {
+    background-image:    url("../img/prenda2.jpg");
+    background-size:     cover;
+    background-position: center;
+    background-repeat:   no-repeat;
+}
+
+
+.category-prenda3 {
+    background-image:    url("../img/prenda3.jpg") ;
+    background-size:     cover;
+    background-position: center;
+    background-repeat:   no-repeat;
+}
+
+.card-category p {
+    font-size:     2.5rem;
+    color:         #fff; /*Color de texto*/
+    text-transform:capitalize; /*Solamente se transforma la primera letra en mayúscula*/
+    position:      relative;
+}
+
+.card-category p::after{
+    content:          "";
+    width:            2.5rem;
+    height:           2px;
+    background-color: #fff;
+    position:         absolute;
+    bottom:           -1rem;
+    left:             50%;
+    transform:        translate(-50%,50%);
+}
+
+.card-category span {
+    font-size:  1.6rem;
+    color:     #fff;
+    cursor:     pointer; /*Modificando al puntero del Mouse*/
+}
+
+.card-category span:hover{ /*Cambia el color cuando pasamos el mouse encima*/
+    color: var(--colorvm);
+}
+
+/*Estilos aplicado para el footer*/
+
+.footer {
+    background-color: var(--footer);
+}
+
+.container-footer{
+    display:        flex;
+    flex-direction: column;
+    gap:            4rem;
+    padding:        3rem;
+}
+
+.menu-footer {
+    display:               grid;
+    grid-template-columns: repeat(3,1fr) 30rem;
+    justify-items:         center; /*Los items son todos los elementos dentro de una sección*/
+}
+
+.titulo-footer {
+    font-weight:    600;
+    font-size:      1.6rem;
+    text-transform: uppercase; /*Todas las letras esten en mayúsculas*/
+}
+
+.contact-info {
+    display:        flex;
+    flex-direction: column;
+    gap:            2rem;
+
+}
+
+.social{
+    display:        flex;
+    flex-direction: row;
+    gap:            3rem
+}
+
+.titulo{
+text-align:      center;
+    font-weight: 300;
+    margin:      20px 0;     /*Arriba y abajo -- haia los lados 0*/
+    font-size:   30px;
+}
+
+.contenedor-galeria{
+    display:         flex;
+    justify-content: space-evenly; /*Los elementos se acomodarán de inicio a fin ocupando todo el espacio*/
+    flex-wrap:       wrap;
+    
+}
+
+.caja-galeria{
+    width:         28%;
+    height:        250px;
+    margin-bottom: 30px;
+    position:      relative;
+    cursor:        pointer;
+    overflow:      hidden;
+}
+
+
+.caja-galeria:hover .caja-hover {
+    transform: translate(0);
+}
+
+.caja-hover {
+    transform:      translate(100%,100%);
+    width:          100%;
+    height:         100%;
+    position:       absolute;
+    top:            0;
+    left:           0;
+    background:     #ccbaba7e;
+    color:          #fff;
+    font-size:      25px;
+    display:        flex;
+    justify-content:center;
+    align-items:    center;
+    transition:     transform .4s;
+}
+
+.caja-galeria img{
+    display: block;     /*Le comentas que su espacio es un bloque*/
+    width:   100%;
+    height:  100%;
+    object-fit: cover; /*La imagen se acopla a su espacio, así no se deforma*/
+}
+
+/*Programar los media Query (Son comportamientos de los elementos cuando la condición se cumple, en este caso el tamaño de la pantalla, podría entrar letra, tamaño, posición, etc...display)*/
+
+@media screen and (max-width:900px) {
+    .caja-galeria {
+        width: 45%;
+    }
+    .caja-hover{
+        font-size: 20px;
+    }
+}
+
+@media screen and (max-width:500px) {
+    .caja-galeria {
+        width: 90%;
+    }
+    .caja-hover{
+        font-size: 18px;
+    }
+}
