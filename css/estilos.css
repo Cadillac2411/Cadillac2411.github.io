@@ -60,6 +60,20 @@ html{
     background-color: var(--background-color);
 }
 
+.shoping {
+    list-style: none;
+    text-decoration: none;
+    
+}
+
+.shoping a:hover{
+ color: blue;
+}
+ .shoping a{
+ font-size: 30px;
+ }
+
+ 
 .navbar {
     display:         flex;
     justify-content: space-between;
