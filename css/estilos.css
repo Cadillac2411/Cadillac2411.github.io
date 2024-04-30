@@ -60,6 +60,27 @@ html{
     background-color: var(--background-color);
 }
 
+.shoping {
+    list-style: none;
+    text-decoration: none;
+    padding: 0px 0px 15px 50px;
+    
+}
+
+.shoping a:hover{
+ color: royalblue;
+}
+ .shoping a{
+ font-size: 30px;
+ padding: 25px;
+ }
+
+ .shoping {
+   display:  flex;
+   justify-content: center;
+ }
+
+ 
 .navbar {
     display:         flex;
     justify-content: space-between;
@@ -110,6 +131,9 @@ html{
 
 .menu a:hover { /*Resalta el color del texto al color que indicamos cuando pasamos el mouse por encima*/
     color: rgb(23, 90, 90);
+}
+.menu a:hover { /*Resalta el color del texto al color que indicamos cuando pasamos el mouse por encima*/
+    color: royalblue;
 }
 
 /*Modificaciones de la sección 1 BANNER*/
